@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Post List{% endblock %}
+
+{% block content %}
+
+<div class="mb-5">
+    <h2 style="text-align: center;">All Posts</h2>
+</div>
+
+
+<div class="d-flex flex-wrap gap-3"> <!-- Usando flexbox para espaçamento -->
+    {% for post in posts %}
+    <div class="card" style="width: 18rem;"> <!-- Cada post em um card separado -->
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width: 100%;" class="card-img-top">
+        <div class="card-body">
+            <h4 class="card-title">{{ post.title }}</h4>     
+            <p class="card-text">{{ post.description }}</p>
+            <a href="#" class="btn btn-primary">Curtir</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
