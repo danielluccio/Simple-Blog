@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}View Post{% endblock %}
+
+{% block content %}
+
+
+<div class="d-flex justify-content-center mt-5" >
+<div class="card" style="width: 18rem;"> <!-- Cada post em um card separado -->
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width: 100%;" class="card-img-top">
+    <div class="card-body">
+        <h4 class="card-title"> Title Post: {{ post.title }}</h4>     
+        <p class="card-text">Content Post: {{ post.description }}</p>
+        <p class="card-text">Creation Post: {{ post.created_at }}</p>
+        <a href="#" class="btn btn-primary">Like</a>
+        <a href="{% url 'post_details' post.id %}" class="btn btn-success">View</a>
+    </div>
+</div>
+</div>
+{% endblock %}
