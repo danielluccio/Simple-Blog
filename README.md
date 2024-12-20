@@ -1,0 +1,1 @@
+This is a simple CRUD of a blog system. Make posts and interact with the application.
